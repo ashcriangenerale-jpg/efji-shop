@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EFJI Shop</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #2e2e2e);
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+
+    header, footer {
+      text-align: center;
+      background: #111;
+      color: #fff;
+      padding: 20px 0;
+      letter-spacing: 1px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.05);
+    }
+
+    .welcome {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #0b0b0b 100%);
+      color: white;
+      text-align: center;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .welcome h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+    }
+
+    .enter-btn {
+      background: white;
+      color: #0d0d0d;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .enter-btn:hover {
+      background: #ff6600;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
+
+    main {
+      display: none;
+      animation: fadeIn 0.8s ease forwards;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      margin: 50px 0;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    section:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #ffffff;
+      border-bottom: 2px solid #ff6600;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .price {
+      color: #ff6600;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #ff6600;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: #111;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome" id="welcome">
+    <h1>Welcome to EFJI Shop</h1>
+    <p>Your trusted Discord service shop</p>
+    <button class="enter-btn" onclick="enterShop()">Enter Shop</button>
+  </div>
+
+  <main id="shop">
+    <header>
+      <h1>EFJI Discord Shop</h1>
+      <p>🎮 Official EFJI Server • 661 Members</p>
+      <a href="https://discord.gg/Q3uMUbdq" target="_blank" class="btn">Join Discord</a>
+    </header>
+
+    <section>
+      <h2>Discord Items</h2>
+      <div class="product-list">
+        <div class="product"><p>₱209 → ₱115</p></div>
+        <div class="product"><p>₱250 → ₱140</p></div>
+        <div class="product"><p>₱339 → ₱185</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Server Boosting</h2>
+      <div class="product-list">
+        <div class="product"><p>2x Boost — ₱70</p></div>
+        <div class="product"><p>4x Boost — ₱95</p></div>
+        <div class="product"><p>6x Boost — ₱135</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Premium Accounts</h2>
+      <div class="product-list">
+        <div class="product"><p>Netflix Shared — ₱65</p></div>
+        <div class="product"><p>Spotify Solo (2M) — ₱65</p></div>
+        <div class="product"><p>Disney+ Solo — ₱100</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Social Media Boosting</h2>
+      <div class="product-list">
+        <div class="product"><p>TikTok 100 Followers — ₱40</p></div>
+        <div class="product"><p>Instagram 100 Likes — ₱28</p></div>
+        <div class="product"><p>Discord 500 Members — ₱145</p></div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 EFJI Shop | Designed for Discord Sellers 💫
+    </footer>
+  </main>
+
+  <script>
+    function enterShop() {
+      const welcome = document.getElementById('welcome');
+      const shop = document.getElementById('shop');
+      welcome.classList.add('hidden');
+      setTimeout(() => {
+        welcome.style.display = 'none';
+        shop.style.display = 'block';
+      }, 800);
+    }
+  </script>
+</body>
+</html>
